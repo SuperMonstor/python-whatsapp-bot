@@ -35,10 +35,13 @@ def create_assistant(file):
         model="gpt-4-1106-preview",
         file_ids=[file.id],
     )
+    # Insert this id into .env file
+    print(f'Assistant ID: {assistant.id}')
     return assistant
 
 
 assistant = create_assistant(file)
+# asst_8FIsFOcVUO7thDiOcPVERcGu
 
 
 # --------------------------------------------------------------
@@ -91,7 +94,7 @@ def generate_response(message_body, wa_id, name):
 # --------------------------------------------------------------
 def run_assistant(thread):
     # Retrieve the Assistant
-    assistant = client.beta.assistants.retrieve("asst_7Wx2nQwoPWSf710jrdWTDlfE")
+    assistant = client.beta.assistants.retrieve("asst_8FIsFOcVUO7thDiOcPVERcGu")
 
     # Run the assistant
     run = client.beta.threads.runs.create(
